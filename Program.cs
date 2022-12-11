@@ -61,3 +61,21 @@ while(current <= N)
     current++;
 }
 */
+
+// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+int SecondNum(int num)
+{
+    int two = num % 100;
+    int second = two / 10;
+    return second;
+}
+Console.WriteLine("Input number from 100 to 999");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int result = SecondNum(num);
+Console.WriteLine($"The second number in {num} is {result}");
+
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
