@@ -78,7 +78,7 @@ Console.WriteLine($"The second number in {num} is {result}");
 */
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-
+/*
 int ThirdNumber (int num)
 {
     int three = num % 1000;
@@ -94,5 +94,22 @@ if (result != 0)
     Console.WriteLine($"The trird number in {num} is {result}");
 else
     Console.WriteLine($"The number {num} doesn't have third number");
+*/
 
 // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+bool WeekDay (int num)
+{
+    if (num == 6 || num == 7)
+    return true;
+    return false;
+}
+
+Console.WriteLine("Input number from 1 to 7");
+int num = Convert.ToInt32(Console.ReadLine());
+
+bool result = WeekDay (num);
+if (result == true)
+    Console.WriteLine("This is a holiday! :)");
+else
+    Console.WriteLine("This is a work day :("); 
