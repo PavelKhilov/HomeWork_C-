@@ -63,6 +63,7 @@ while(current <= N)
 */
 
 // Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+/*
 int SecondNum(int num)
 {
     int two = num % 100;
@@ -74,8 +75,24 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 int result = SecondNum(num);
 Console.WriteLine($"The second number in {num} is {result}");
-
+*/
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+int ThirdNumber (int num)
+{
+    int three = num % 1000;
+    int third = three / 100;
+    return third;
+}
+Console.WriteLine("Input number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int result = ThirdNumber(num);
+
+if (result != 0)
+    Console.WriteLine($"The trird number in {num} is {result}");
+else
+    Console.WriteLine($"The number {num} doesn't have third number");
 
 // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
