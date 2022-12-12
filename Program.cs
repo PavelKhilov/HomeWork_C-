@@ -141,7 +141,7 @@ Console.WriteLine($"The number {num} is polyndrome - {result}.");
 */
 
 // Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-
+/*
 double FindDistance(double xA, double yA, double zA, double xB, double yB, double zB)
 {
     double distance = Math.Round(Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2)), 3);
@@ -162,5 +162,21 @@ double zB = Convert.ToDouble(Console.ReadLine());
 
 double dist = FindDistance(xA, yA, zA, xB, yB, zB);
 Console.WriteLine($"Distance between A({xA},{yA},{zA}) and B({xB},{yB},{zB}) is {dist}.");
+*/
 
 // Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void CubePower(int N)
+{
+    int i = 1;
+
+    while(i <= N)
+    {
+        Console.Write(Math.Pow(i, 3) + " ");
+        i++;
+    }    
+}
+Console.WriteLine("Input number N");
+int N = Convert.ToInt32(Console.ReadLine());
+
+CubePower(N);
