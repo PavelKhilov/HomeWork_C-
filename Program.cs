@@ -116,7 +116,7 @@ else
 */
 
 // Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-
+/*
 bool Palyndrome (int N)
 {
     int count = N;
@@ -138,9 +138,29 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 bool result = Palyndrome (num);
 Console.WriteLine($"The number {num} is polyndrome - {result}.");
+*/
 
 // Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
+double FindDistance(double xA, double yA, double zA, double xB, double yB, double zB)
+{
+    double distance = Math.Round(Math.Sqrt(Math.Pow(xA - xB, 2) + Math.Pow(yA - yB, 2) + Math.Pow(zA - zB, 2)), 3);
+    return distance;
+}
+Console.WriteLine("Input coordinate first point: xA= ");
+double xA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input coordinate first point: yA= ");
+double yA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input coordinate first point: zA= ");
+double zA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input coordinate second point: yB= ");
+double xB = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input coordinate second point: yB= ");
+double yB = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input coordinate second point: zB= ");
+double zB = Convert.ToDouble(Console.ReadLine());
 
+double dist = FindDistance(xA, yA, zA, xB, yB, zB);
+Console.WriteLine($"Distance between A({xA},{yA},{zA}) and B({xB},{yB},{zB}) is {dist}.");
 
 // Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
