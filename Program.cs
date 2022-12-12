@@ -117,6 +117,30 @@ else
 
 // Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
+bool Palyndrome (int N)
+{
+    int count = N;
+    int reverse = 0;
+    while (count != 0)
+    {
+        reverse = reverse * 10 + count % 10;
+        count = count / 10;
+    }
+
+    if ( N == reverse)
+        return true;
+    else
+        return false;
+}    
+    
+Console.WriteLine("Input number N: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+bool result = Palyndrome (num);
+Console.WriteLine($"The number {num} is polyndrome - {result}.");
+
 // Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+
 
 // Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
