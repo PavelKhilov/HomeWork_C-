@@ -184,7 +184,23 @@ CubePower(N);
 
 // Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
+double Degree (double A, int B)
+{
+    double result = 1;
+    for (int i = B; i > 0; i--)
+    {
+        result = result * A;
+    }
+    return result;
+}
 
+Console.WriteLine("Input number A: ");
+double A = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Input number B: ");
+int B = Convert.ToInt32(Console.ReadLine());
+
+double res = Degree(A, B);
+Console.WriteLine($"The number {A} to the power of {B} = {res}");
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
