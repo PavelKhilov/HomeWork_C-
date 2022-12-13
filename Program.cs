@@ -183,7 +183,7 @@ CubePower(N);
 */
 
 // Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-
+/*
 double Degree (double A, int B)
 {
     double result = 1;
@@ -201,9 +201,23 @@ int B = Convert.ToInt32(Console.ReadLine());
 
 double res = Degree(A, B);
 Console.WriteLine($"The number {A} to the power of {B} = {res}");
-
+*/
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+int SumNum (int A)
+{
+    int sum = 0;
+    for (int i = A; i != 0; i = i / 10)
+    {
+        sum = sum + A % 10;
+        A = A / 10;
+    }
+    return sum;
+}
 
+Console.WriteLine("Input number A: ");
+int A = Convert.ToInt32(Console.ReadLine());
+int res = SumNum(A);
+Console.WriteLine($"The summ of numbers {A} = {res}");
 
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
