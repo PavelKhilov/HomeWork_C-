@@ -203,6 +203,7 @@ double res = Degree(A, B);
 Console.WriteLine($"The number {A} to the power of {B} = {res}");
 */
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
 int SumNum (int A)
 {
     int sum = 0;
@@ -218,6 +219,24 @@ Console.WriteLine("Input number A: ");
 int A = Convert.ToInt32(Console.ReadLine());
 int res = SumNum(A);
 Console.WriteLine($"The summ of numbers {A} = {res}");
-
+*/
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+int[] InputPrintArray (int size)
+{
+    int[] array = new int[size];
+        for (int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Input {i+1} element of array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    return array;
+}
+Console.WriteLine($"Input array size: ");
+int size = Convert.ToInt32(Console.ReadLine());
+InputPrintArray (size);
