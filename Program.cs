@@ -283,7 +283,7 @@ Console.WriteLine($"Number of even array elements: {myCount}");
 
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 // Найдите сумму элементов, стоящих на нечётных позициях.
-
+/*
 int[] RandomArray (int size, int minValue, int maxValue)
 {
     int[] array = new int[size];
@@ -316,6 +316,57 @@ int[] myArray = RandomArray(sizeArray, min, max);
 ShowArray(myArray);
 int Sum = SumElementEvenPosition(myArray);
 Console.WriteLine($"The sum of elements on even position is: {Sum}");
-
+*/
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+double[] RandomArray (int size, int minValue, int maxValue)
+{
+    double[] array = new double[size];
+    for(int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(minValue, maxValue) + new Random().NextDouble();
+    return array;
+}
+
+double DiffMaxMin (double[] array)
+{
+    double diff = 0;
+    double max = 0;
+    double min = 0;    
+    if(array[0] > array[1])
+    {
+        max = array[0];
+        min = array[1];        
+    }
+    else
+    {
+        min = array[0];
+        max = array[1];         
+    }
+    for(int i = 2; i < array.Length; i++)
+    {
+        if(array[i] < min)
+            min = array[i];
+        if(array[i] > max)
+            max = array[i];
+    }
+    diff = max - min;
+    return Math.Round(diff, 3);
+}
+
+void ShowArray(double[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(Math.Round(array[i], 3) + " ");
+    Console.WriteLine(" ");
+}
+
+Console.WriteLine("Input array size: ");
+int sizeArray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input min value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input max value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+double[] myArray = RandomArray(sizeArray, min, max);
+ShowArray(myArray);
+double Diff = DiffMaxMin(myArray);
+Console.WriteLine($"The sum of elements on even position is: {Diff}");
