@@ -244,7 +244,7 @@ InputPrintArray (size);
 
 // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 // Напишите программу, которая покажет количество чётных чисел в массиве.
-
+/*
 int[] RandomPositiveNumber (int size)
 {
     int[] array = new int[size];
@@ -279,10 +279,43 @@ int[] myArray = RandomPositiveNumber(sizeArray);
 ShowArray(myArray);
 int myCount = ShowEvenNumbArray(myArray);
 Console.WriteLine($"Number of even array elements: {myCount}");  
-
+*/
 
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 // Найдите сумму элементов, стоящих на нечётных позициях.
+
+int[] RandomArray (int size, int minValue, int maxValue)
+{
+    int[] array = new int[size];
+    for(int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
+
+int SumElementEvenPosition(int[] array) // Нечетные позиции массива опеределены как для пользователя 1, 2, 3, 4, 5...
+{
+    int sum = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(i % 2 == 0)
+            sum = sum + array[i];
+    return sum;
+}
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine(" ");
+}
+Console.WriteLine("Input array size: ");
+int sizeArray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input min value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input max value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+int[] myArray = RandomArray(sizeArray, min, max);
+ShowArray(myArray);
+int Sum = SumElementEvenPosition(myArray);
+Console.WriteLine($"The sum of elements on even position is: {Sum}");
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
