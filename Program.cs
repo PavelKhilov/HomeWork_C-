@@ -318,7 +318,7 @@ int Sum = SumElementEvenPosition(myArray);
 Console.WriteLine($"The sum of elements on even position is: {Sum}");
 */
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
+/*
 double[] RandomArray (int size, int minValue, int maxValue)
 {
     double[] array = new double[size];
@@ -370,3 +370,9 @@ double[] myArray = RandomArray(sizeArray, min, max);
 ShowArray(myArray);
 double Diff = DiffMaxMin(myArray);
 Console.WriteLine($"The sum of elements on even position is: {Diff}");
+*/
+
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
