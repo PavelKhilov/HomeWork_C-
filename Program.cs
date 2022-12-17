@@ -374,5 +374,32 @@ Console.WriteLine($"The sum of elements on even position is: {Diff}");
 
 // Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 
+bool CheckPositiveNumber(int a)
+{
+    return a > 0;
+}
+
+int CounterPositiveNumber(bool answer)
+{
+    int count = 0;
+    if (answer)
+        count = 1;
+    return count;
+}
+int result = 0;
+int i = 1;
+Console.Write("Input how many number to check: N = ");
+int n = Convert.ToInt32(Console.ReadLine());
+while (i <= n)
+{
+   Console.Write("Input number to check: number = ");
+    int a = Convert.ToInt32(Console.ReadLine());
+    bool check = CheckPositiveNumber(a); 
+    result = result + CounterPositiveNumber(check);
+    i++;
+}
+
+Console.WriteLine($"The number of positives number is {result}");
+
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
