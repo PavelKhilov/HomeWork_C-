@@ -373,7 +373,7 @@ Console.WriteLine($"The sum of elements on even position is: {Diff}");
 */
 
 // Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-
+/*
 bool CheckPositiveNumber(int a)
 {
     return a > 0;
@@ -392,7 +392,7 @@ Console.Write("Input how many number to check: N = ");
 int n = Convert.ToInt32(Console.ReadLine());
 while (i <= n)
 {
-   Console.Write("Input number to check: number = ");
+    Console.Write("Input number to check: number = ");
     int a = Convert.ToInt32(Console.ReadLine());
     bool check = CheckPositiveNumber(a); 
     result = result + CounterPositiveNumber(check);
@@ -400,6 +400,48 @@ while (i <= n)
 }
 
 Console.WriteLine($"The number of positives number is {result}");
-
+*/
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+bool CheckLineCoincidence(double k1, double b1, double k2, double b2)
+{
+    return (k1 == k2 && b1 == b2);
+}
+
+bool CheckLineParallels(double k1, double k2)
+{
+    return (k1 == k2);
+}
+
+double[] FindLineIntrsectionPoint(double k1, double b1, double k2, double b2)
+{
+    double[] xy = new double[2];
+    xy[0] = Math.Round((b2 - b1)/(k1 - k2), 3);
+    xy[1] = Math.Round(k1*xy[1] + b1, 3);
+    return xy;
+}
+
+Console.Write("Input first line parametr: k1 = ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Input first line parametr: b1 = ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Input first line parametr: k2 = ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Input first line parametr: b2 = ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+
+
+if (CheckLineCoincidence(k1, b1, k2, b2))
+    Console.WriteLine("The lines are coincident");
+else
+{    
+    if(CheckLineParallels(k1, k2))
+        Console.WriteLine("The lines are parallel");
+    else
+    {
+        double[] point = new double[2];
+        point = FindLineIntrsectionPoint(k1, b1, k2, b2);
+        Console.Write($"The intersection point coordinates: X = {point[0]}, Y = {point[1]}");
+    }
+}
