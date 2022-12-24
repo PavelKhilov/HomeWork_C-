@@ -117,22 +117,24 @@ void Show2dArray(int[,] array)
     Console.WriteLine();
 }
 
-void ShowArray(int[] array)
+void ShowArray(double[] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
         Console.Write(array[i] + "\t");
     Console.WriteLine();
 }
 
-int[] AverageColumns2dArray (int[,] array)
+double[] AverageColumns2dArray (int[,] array)
 {
-    int[] averageCulumns = new int[array.GetLength(1)];
+    double[] averageCulumns = new double[array.GetLength(1)];
     for(int j = 0; j < array.GetLength(1); j++)
     {
+        double sum = 0;
         for (int i = 0; i < array.GetLength(0); i++)
         {
-            averageCulumns[j] += array[i,j];
+            sum += array[i,j];
         }
+        averageCulumns[j] = Math.Round(sum / array.GetLength(0), 2);
     }
     return averageCulumns;
 }
@@ -140,5 +142,5 @@ int[] AverageColumns2dArray (int[,] array)
 int[,] myArray = CreateRandom2dArray();
 Show2dArray(myArray);
 Console.WriteLine();
-int[] avgArray = AverageColumns2dArray(myArray);
+double[] avgArray = AverageColumns2dArray(myArray);
 ShowArray(avgArray);
