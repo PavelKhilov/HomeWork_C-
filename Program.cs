@@ -61,7 +61,7 @@ Show2dArray(sortArray);
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с 
 // наименьшей суммой элементов.
-/*
+
 int[,] CreateRandom2dArray()
 {
     Console.Write("Input a numbers of rows: ");
@@ -101,8 +101,8 @@ void FindMinSumRow(int[,] array)
         int sumRow = 0;
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            sumRow =+ array[i,j];
-            sumMin =+ array[minNum,j];
+            sumRow += array[i,j];
+            sumMin += array[minNum,j];
         }
         if(sumRow < sumMin)
         {
@@ -115,10 +115,10 @@ void FindMinSumRow(int[,] array)
 int[,] array = CreateRandom2dArray();
 Show2dArray(array);
 FindMinSumRow(array);
-*/
+
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-
+/*
 int[,] CreateRandom2dArray()
 {
     Console.Write("Input a numbers of rows: ");
@@ -176,7 +176,7 @@ if(array1.GetLength(1) == array2.GetLength(0))
 }
 else
     Console.WriteLine("Multiplication Array1 and Array2 is impossible!");
-
+*/
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, 
 // которая будет построчно выводить массив, добавляя индексы каждого элемента.
