@@ -1,6 +1,6 @@
 ﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. 
 // Выполнить с помощью рекурсии.
-
+/*
 void ShowNums(int num)
 {
     Console.Write(num + " ");
@@ -11,8 +11,23 @@ void ShowNums(int num)
 Console.Write("Input a number N: ");
 int n = Convert.ToInt32(Console.ReadLine());
 ShowNums(n);
-
+*/
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 
+int SumNums(int m, int n)
+{
+    if(m > n) 
+        return m + SumNums(m - 1, n);
+    if(m < n)
+        return m + SumNums(m + 1, n);
+    return m;
+}
+
+Console.Write("Input a number M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int sum = SumNums(m,n);
+Console.WriteLine($"Sum between numbers M and N: {sum}");
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
