@@ -180,35 +180,6 @@ else
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, 
 // которая будет построчно выводить массив, добавляя индексы каждого элемента.
-/*
-int[,,] CreateRandom3dArray()
-{
-    Console.Write("Input a numbers of layers: ");
-    int layers = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a numbers of rows: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a numbers of columns: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-    
-    int[,,] array = new int[layers, rows, columns];
-    int count = 1;
-    if(count > 0)
-        int num = new Random().Next(10, 100);
-        count = 0;
-        for(int l = 0; l < array.GetLength(0); l++)
-            for(int m = 0; m < array.GetLength(1); m++)
-                for(int n = 0; n < array.GetLength(2); n++)
-                    if(num == array[l,m,n])
-                        count++;    
-    else
-    {
-    for(int i = 0; i < layers; i++)
-        for(int j = 0; j < rows; j++)
-            for(int k = 0; k < columns; k++)
-                array[i,j,k] = num;        
-    }
-    return array;
-}
 
 void Show3dArray(int[,,] array)
 {
@@ -225,13 +196,42 @@ void Show3dArray(int[,,] array)
     }
 }
 
-int[,,] array3d = CreateRandom3dArray();
+int GenUniqElement3dArray(int[,,] array)
+{
+    int num = new Random().Next(10, 100);
+    for(int i = 0; i < array.GetLength(0); i++)
+        for(int j = 0; j < array.GetLength(1); j++)
+            for(int k = 0; k < array.GetLength(2); k++)
+                if(num == array[i,j,k])
+                {
+                    num = new Random().Next(10, 100);
+                    i = 0;
+                    j = 0;
+                    k = 0;
+                }
+    return num;
+}
+
+Console.Write("Input a numbers of layers: ");
+int layers = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a numbers of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a numbers of columns: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+        
+int[,,] array3d = new int[layers, rows, columns];
+
+for(int i = 0; i < array3d.GetLength(0); i++)
+    for(int j = 0; j < array3d.GetLength(1); j++)
+        for(int k = 0; k < array3d.GetLength(2); k++)    
+            array3d[i,j,k] = GenUniqElement3dArray(array3d);
+
 Console.WriteLine();
 Show3dArray(array3d);
-*/
+
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4. 
 // Например, на выходе получается вот такой массив:
-
+/*
 int[,] CreateSpirale2dArray()
 {
     Console.Write("Input matrix size: ");
@@ -268,3 +268,4 @@ void Show2dArray(int[,] array)
 
 int[,] spiralArray = CreateSpirale2dArray();
 Show2dArray(spiralArray);
+*/
